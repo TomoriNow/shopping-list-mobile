@@ -18,7 +18,7 @@ class _ShopFormPageState extends State<ShopFormPage> {
     String _name = "";
     int _price = 0;
     String _description = "";
-    
+    final _dateAdded = DateTime.now();
     
     @override
     Widget build(BuildContext context) {
@@ -129,6 +129,7 @@ class _ShopFormPageState extends State<ShopFormPage> {
                                         'name': _name,
                                         'price': _price.toString(),
                                         'description': _description,
+                                        'date added': _dateAdded.toString(),
                                     }));
                                     if (response['status'] == 'success') {
                                         ScaffoldMessenger.of(context)
